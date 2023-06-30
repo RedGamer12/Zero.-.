@@ -20,6 +20,7 @@ function Players.RemoveFromBlacklist(playerName)
     blackList[playerName] = nil
 end
 
+print("Loaded Players_Module.lua")
 return Players
 
 
