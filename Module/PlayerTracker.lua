@@ -23,6 +23,18 @@ function PlayerTracker.GetPlayerTeam(player)
     end
 end
 
+function PlayerTracker.IsPlayerDead(player)
+    if player.Character then
+        local humanoid = player.Character:FindFirstChildOfClass("Humanoid")
+        return (humanoid and humanoid.Health <= 0)
+    end
+    return false
+end
+
+function PlayerTracker.IsPlayerLeavingGame(player)
+    return not player:IsDescendantOf(game)
+end
+
 return PlayerTracker
 
 --[[
@@ -47,5 +59,16 @@ for _, player in ipairs(players) do
     else
         print(player.Name .. " không thuộc bất kỳ nhóm nào.")
     end
+end
+]]
+
+--[[
+-- Kiểm tra một người chơi cụ thể
+if PlayerChecker.IsPlayerDead(player) then
+    print(player.Name .. " đã chết.")
+end
+
+if PlayerChecker.IsPlayerLeavingGame(player) then
+    print(player.Name .. " đang rời khỏi trò chơi.")
 end
 ]]
