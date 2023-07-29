@@ -14,9 +14,14 @@ function Players.IsPlayerBlacklisted(playerName)
     return blackList[playerName] or false
 end
 
+function Players.RemoveAllFromBlacklist()
+    for playerName in pairs(blackList) do
+        blackList[playerName] = nil
+    end
+end
+
 print("Loaded Players_Module.lua")
 return Players
-
 
 --[[
 -- Thêm một người chơi vào danh sách cấm
