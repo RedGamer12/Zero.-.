@@ -174,7 +174,7 @@ function module.UpdateRopePosition(ropeFolder, PartA, PartB, distanceToRemove, L
 	end
 end
 
-function module.TeleportThroughSpheres(spheresFolder, PartA, PartB, Length)
+function module.TeleportThroughSpheres(spheresFolder, PartA, PartB, Length, LastCFrame)
 	if not (PartA:IsA("BasePart") and PartB:IsA("BasePart")) then
 		error("TeleportThroughSpheres function requires BasePart arguments")
 		return
@@ -198,9 +198,9 @@ function module.TeleportThroughSpheres(spheresFolder, PartA, PartB, Length)
 	spawn(function()
 		while wait() do
 			local distanceBetweenAB = (PartA.Position - PartB.Position).Magnitude
-			if distanceBetweenAB < 10 then
+			if distanceBetweenAB < 150 then
 				--print("Distance between PartA and PartB is less than 10 studs.")
-				PartA.CFrame = PartB.CFrame * CFrame.new(0, 5, 5)
+				PartA.CFrame = LastCFrame
 				isTeleporting = false
 			end
 		end
