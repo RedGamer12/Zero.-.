@@ -82,10 +82,10 @@ do
 
 			local success, err = self:Load(name)
 			if not success then
-				return self.Library:Notify('Failed to load autoload macro config: ' .. err)
+				return self.Library:Notify('Failed to load autoload macro file: ' .. err)
 			end
 
-			self.Library:Notify(string.format('Auto loaded macro config %q', name))
+			self.Library:Notify(string.format('Auto loaded macro file %q', name))
 		end
 	end
 
@@ -111,15 +111,15 @@ do
 		section:AddButton('Set as autoload', function()
 			local name = Options.MacroManager_ConfigList.Value
 			writefile(self.Folder .. '/macros/autoload.txt', name)
-			MacroManager.AutoloadLabel:SetText('Current autoload macro config: ' .. name)
+			MacroManager.AutoloadLabel:SetText('Current autoload macro file: ' .. name)
 			self.Library:Notify(string.format('Set %q to auto load', name))
 		end)
 
-		MacroManager.AutoloadLabel = section:AddLabel('Current autoload macro config: none', true)
+		MacroManager.AutoloadLabel = section:AddLabel('Current autoload macro file: none', true)
 
 		if isfile(self.Folder .. '/macros/autoload.txt') then
 			local name = readfile(self.Folder .. '/macros/autoload.txt')
-			MacroManager.AutoloadLabel:SetText('Current autoload macro config: ' .. name)
+			MacroManager.AutoloadLabel:SetText('Current autoload macro file: ' .. name)
 		end
 
 		MacroManager:SetIgnoreIndexes({ 'MacroManager_ConfigList', 'MacroManager_ConfigName' })
