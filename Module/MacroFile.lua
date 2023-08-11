@@ -14,10 +14,6 @@ do
 		self:BuildFolderTree()
 	end
 
-	function MacroManager:SetLibrary(library)
-		self.Library = library
-	end
-
 	function MacroManager:ParseSettingsFromFile(filePath)
 		if not isfile(filePath) then
 			return nil
@@ -74,6 +70,10 @@ do
 		end
 
 		return out
+	end
+
+	function MacroManager:SetLibrary(library)
+		self.Library = library
 	end
 
 	function MacroManager:LoadAutoloadConfig()
