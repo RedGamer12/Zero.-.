@@ -76,6 +76,19 @@ do
 		return out
 	end
 
+	function MacroManager:LoadAutoloadConfig()
+		if isfile(self.Folder .. '/macros/autoload.txt') then
+			local name = readfile(self.Folder .. '/macros/autoload.txt')
+
+			local success, err = self:Load(name)
+			if not success then
+				return self.Library:Notify('Failed to load autoload config: ' .. err)
+			end
+
+			self.Library:Notify(string.format('Auto loaded config %q', name))
+		end
+	end
+
 	function MacroManager:BuildConfigSection(tab)
 		assert(self.Library, 'Must set MacroManager.Library')
 
