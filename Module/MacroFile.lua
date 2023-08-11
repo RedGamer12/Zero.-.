@@ -49,7 +49,7 @@ do
 		end
 	end
 
-	function SaveManager:RefreshConfigList()
+	function MacroManager:RefreshConfigList()
 		local list = listfiles(self.Folder .. '/macros')
 
 		local out = {}
