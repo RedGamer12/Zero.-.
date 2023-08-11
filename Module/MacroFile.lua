@@ -14,27 +14,27 @@ do
 		self:BuildFolderTree()
 	end
 
-    function MacroManager:SetLibrary(library)
+	function MacroManager:SetLibrary(library)
 		self.Library = library
 	end
 
-    function MacroManager:ParseSettingsFromFile(filePath)
-        if not isfile(filePath) then
-            return nil
-        end
-    
-        local fileContents = readfile(filePath)
-        local settings = {}
-    
-        for line in fileContents:gmatch("[^\r\n]+") do
-            local key, value = line:match("(.+)%s*:%s*(%S+)")
-            if key and value then
-                settings[key] = value
-            end
-        end
-    
-        return settings
-    end
+	function MacroManager:ParseSettingsFromFile(filePath)
+		if not isfile(filePath) then
+			return nil
+		end
+
+		local fileContents = readfile(filePath)
+		local settings = {}
+
+		for line in fileContents:gmatch("[^\r\n]+") do
+			local key, value = line:match("(.+)%s*:%s*(%S+)")
+			if key and value then
+				settings[key] = value
+			end
+		end
+
+		return settings
+	end
 
 	function MacroManager:BuildFolderTree()
 		local paths = {
@@ -51,30 +51,30 @@ do
 
 	function SaveManager:RefreshConfigList()
 		local list = listfiles(self.Folder .. '/macros')
-	
+
 		local out = {}
 		for i = 1, #list do
 			local file = list[i]
 			if file:sub(-4) == '.txt' then -- Thay đổi độ dài của chuỗi kiểm tra
 				-- i hate this but it has to be done ...
-	
+
 				local pos = file:find('.txt', 1, true)
 				local start = pos
-	
+
 				local char = file:sub(pos, pos)
 				while char ~= '/' and char ~= '\\' and char ~= '' do
 					pos = pos - 1
 					char = file:sub(pos, pos)
 				end
-	
+
 				if char == '/' or char == '\\' then
 					table.insert(out, file:sub(pos + 1, start - 1))
 				end
 			end
 		end
-		
+
 		return out
-	end	
+	end
 
 	function MacroManager:LoadAutoloadConfig()
 		if isfile(self.Folder .. '/macros/autoload.txt') then
@@ -98,7 +98,8 @@ do
 			{ Text = 'Macro File', Values = self:RefreshConfigList(), AllowNull = true })
 
 		section:AddToggle('MacroManager_Enabled',
-			{ Text = 'Macro Enabled' }):AddKeyPicker('MacroKeybind', { Default = 'B', NoUI = true, Text = 'Active Macro' })
+			{ Text = 'Macro Enabled' }):AddKeyPicker('MacroKeybind',
+			{ Default = 'B', NoUI = true, Text = 'Active Macro' })
 
 		section:AddDivider()
 
