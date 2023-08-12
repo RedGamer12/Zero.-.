@@ -52,8 +52,6 @@ do
 		for i = 1, #list do
 			local file = list[i]
 			if file:sub(-4) == '.txt' then -- Thay đổi độ dài của chuỗi kiểm tra
-				if file ~= 'autoload.txt' then
-					continue
 				end
 				-- i hate this but it has to be done ...
 
@@ -80,8 +78,8 @@ do
 	end
 
 	function MacroManager:LoadAutoloadConfig()
-		if isfile(self.Folder .. '/macros/autoload.txt') then
-			local name = readfile(self.Folder .. '/macros/autoload.txt')
+		if isfile(self.Folder .. '/macros/autoload.lua') then
+			local name = readfile(self.Folder .. '/macros/autoload.lua')
 
 			local success, err = self:Load(name)
 			if not success then
@@ -113,15 +111,15 @@ do
 
 		section:AddButton('Set as autoload', function()
 			local name = Options.MacroManager_ConfigList.Value
-			writefile(self.Folder .. '/macros/autoload.txt', name)
+			writefile(self.Folder .. '/macros/autoload.lua', name)
 			MacroManager.AutoloadLabel:SetText('Current autoload macro file: ' .. name)
 			self.Library:Notify(string.format('Set %q to auto load', name))
 		end)
 
 		MacroManager.AutoloadLabel = section:AddLabel('Current autoload macro file: none', true)
 
-		if isfile(self.Folder .. '/macros/autoload.txt') then
-			local name = readfile(self.Folder .. '/macros/autoload.txt')
+		if isfile(self.Folder .. '/macros/autoload.lua') then
+			local name = readfile(self.Folder .. '/macros/autoload.lua')
 			MacroManager.AutoloadLabel:SetText('Current autoload macro file: ' .. name)
 		end
 
