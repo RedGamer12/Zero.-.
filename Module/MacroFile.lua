@@ -52,7 +52,6 @@ do
 		for i = 1, #list do
 			local file = list[i]
 			if file:sub(-4) == '.txt' then -- Thay đổi độ dài của chuỗi kiểm tra
-				-- i hate this but it has to be done ...
 
 				local pos = file:find('.txt', 1, true)
 				local start = pos
