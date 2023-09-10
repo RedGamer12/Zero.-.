@@ -1,7 +1,7 @@
 local Data = {}
 
-function Data.CheckQuest(Level)
-    local MyLevel = Level
+function Data.CheckQuest()
+    local MyLevel = game.Players.LocalPlayer.Data.Level.Value
     if Sea1 then
         if MyLevel == 1 or MyLevel <= 9 or SelectMobFarm == "Bandit [Lv. 5]" then -- Bandit
             Ms = "Bandit [Lv. 5]"
@@ -772,8 +772,8 @@ function Data.CheckQuest(Level)
     end
 end
 
-function Data.CheckSelect(Level)
-    local MyLevel = Level
+function Data.CheckSelect()
+    local MyLevel = game.Players.LocalPlayer.Data.Level.Value
     if World1 then
         if MyLevel == 1 or MyLevel <= 9 or SelectMonster == "Bandit [Lv. 5]" then -- Bandit
             Mon = "Bandit [Lv. 5]"
