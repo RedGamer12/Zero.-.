@@ -1,3 +1,13 @@
+local PlaceId = game.PlaceId
+local SelectMobFarm
+if PlaceId == 2753915549 then
+    Sea1 = true
+elseif PlaceId == 4442272183 then
+    Sea2 = true
+elseif PlaceId == 7449423635 then
+    Sea3 = true
+end
+
 local Data = {}
 
 function Data.CheckQuest()
