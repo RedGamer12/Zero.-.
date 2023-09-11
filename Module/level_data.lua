@@ -11,22 +11,34 @@ end
 local Data = {}
 
 function Data.CheckQuest()
-    local MyLevel = game.Players.LocalPlayer.Data.Level.Value
+    local Client = game.Players.LocalPlayer
+    local MyLevel = Client.Data.Level.Value
     if Sea1 then
-        if MyLevel == 1 or MyLevel <= 9 or SelectMobFarm == "Bandit [Lv. 5]" then -- Bandit
+        if (MyLevel == 1 or MyLevel <= 9 or SelectMobFarm == "Bandit [Lv. 5]") and Client.Team == "Pirates" then -- Bandit
             Ms = "Bandit [Lv. 5]"
             NameQuest = "BanditQuest1"
             LevelQuest = 1
+            LevelRequire = 0
             NameMon = "Bandit"
             CFrameQuest = CFrame.new(1061.66699, 16.5166187, 1544.52905, -0.942978859, -3.33851502e-09, 0.332852632,
                                      7.04340497e-09, 1, 2.99841325e-08, -0.332852632, 3.06188177e-08, -0.942978859)
             CFrameMon = CFrame.new(1199.31287, 52.2717781, 1536.91516, -0.929782331, 6.60215846e-08, -0.368109822,
                                    3.9077392e-08, 1, 8.06501603e-08, 0.368109822, 6.06023249e-08, -0.929782331)
             SPAWNPOINT = "Default"
+        elseif (MyLevel == 1 or MyLevel <= 9 or SelectMobFarm == "Trainee [Lv. 5]") and Client.Team == "Marines" then -- Bandit
+            Ms = "Trainee [Lv. 5]"
+            NameQuest = "TraineeQuest1"
+            LevelQuest = 1
+            LevelRequire = 0
+            NameMon = "Trainee"
+            CFrameQuest = CFrame.new(-2712.64551, 24.6459293, 2101.65259, -0.706964731, -1.0726553e-08, -0.707248807, -3.4630169e-08, 1, 1.94496685e-08, 0.707248807, 3.82423728e-08, -0.706964731)
+            CFrameMon = CFrame.new(-2855.11743, 41.1388931, 2166.48364, -0.19812648, 1.83248616e-08, -0.980176449, -7.75043958e-08, 1, 3.43617046e-08, 0.980176449, 8.27759479e-08, -0.19812648)
+            SPAWNPOINT = "Default"
         elseif MyLevel == 10 or MyLevel <= 14 or SelectMobFarm == "Monkey [Lv. 14]" then -- Monkey
             Ms = "Monkey [Lv. 14]"
             NameQuest = "JungleQuest"
             LevelQuest = 1
+            LevelRequire = 10
             NameMon = "Monkey"
             CFrameQuest = CFrame.new(-1604.12012, 36.8521118, 154.23732, 0.0648873374, -4.70858913e-06, -0.997892559,
                                      1.41431883e-07, 1, -4.70933674e-06, 0.997892559, 1.64442184e-07, 0.0648873374)
@@ -37,6 +49,7 @@ function Data.CheckQuest()
             Ms = "Gorilla [Lv. 20]"
             NameQuest = "JungleQuest"
             LevelQuest = 2
+            LevelRequire = 15
             NameMon = "Gorilla"
             CFrameQuest = CFrame.new(-1604.12012, 36.8521118, 154.23732, 0.0648873374, -4.70858913e-06, -0.997892559,
                                      1.41431883e-07, 1, -4.70933674e-06, 0.997892559, 1.64442184e-07, 0.0648873374)
@@ -47,6 +60,7 @@ function Data.CheckQuest()
             Ms = "Pirate [Lv. 35]"
             NameQuest = "BuggyQuest1"
             LevelQuest = 1
+            LevelRequire = 30
             NameMon = "Pirate"
             CFrameQuest = CFrame.new(-1139.59717, 4.75205183, 3825.16211, -0.959730506, -7.5857054e-09, 0.280922383,
                                      -4.06310328e-08, 1, -1.11807175e-07, -0.280922383, -1.18718916e-07, -0.959730506)
@@ -57,6 +71,7 @@ function Data.CheckQuest()
             Ms = "Brute [Lv. 45]"
             NameQuest = "BuggyQuest1"
             LevelQuest = 2
+            LevelRequire = 40
             NameMon = "Brute"
             CFrameQuest = CFrame.new(-1139.59717, 4.75205183, 3825.16211, -0.959730506, -7.5857054e-09, 0.280922383,
                                      -4.06310328e-08, 1, -1.11807175e-07, -0.280922383, -1.18718916e-07, -0.959730506)
@@ -67,6 +82,7 @@ function Data.CheckQuest()
             Ms = "Desert Bandit [Lv. 60]"
             NameQuest = "DesertQuest"
             LevelQuest = 1
+            LevelRequire = 60
             NameMon = "Desert Bandit"
             CFrameQuest = CFrame.new(897.031128, 6.43846416, 4388.97168, -0.804044724, 3.68233266e-08, 0.594568789,
                                      6.97835176e-08, 1, 3.24365246e-08, -0.594568789, 6.75715199e-08, -0.804044724)
@@ -77,6 +93,7 @@ function Data.CheckQuest()
             Ms = "Desert Officer [Lv. 70]"
             NameQuest = "DesertQuest"
             LevelQuest = 2
+            LevelRequire = 75
             NameMon = "Desert Officer"
             CFrameQuest = CFrame.new(897.031128, 6.43846416, 4388.97168, -0.804044724, 3.68233266e-08, 0.594568789,
                                      6.97835176e-08, 1, 3.24365246e-08, -0.594568789, 6.75715199e-08, -0.804044724)
@@ -87,6 +104,7 @@ function Data.CheckQuest()
             Ms = "Snow Bandit [Lv. 90]"
             NameQuest = "SnowQuest"
             LevelQuest = 1
+            LevelRequire = 90
             NameMon = "Snow Bandits"
             CFrameQuest = CFrame.new(1384.14001, 87.272789, -1297.06482, 0.348555952, -2.53947841e-09, -0.937287986,
                                      1.49860568e-08, 1, 2.86358204e-09, 0.937287986, -1.50443711e-08, 0.348555952)
@@ -97,6 +115,7 @@ function Data.CheckQuest()
             Ms = "Snowman [Lv. 100]"
             NameQuest = "SnowQuest"
             LevelQuest = 2
+            LevelRequire = 100
             NameMon = "Snowman"
             CFrameQuest = CFrame.new(1384.14001, 87.272789, -1297.06482, 0.348555952, -2.53947841e-09, -0.937287986,
                                      1.49860568e-08, 1, 2.86358204e-09, 0.937287986, -1.50443711e-08, 0.348555952)
@@ -107,6 +126,7 @@ function Data.CheckQuest()
             Ms = "Chief Petty Officer [Lv. 120]"
             NameQuest = "MarineQuest2"
             LevelQuest = 1
+            LevelRequire = 120
             NameMon = "Chief Petty Officer"
             CFrameQuest = CFrame.new(-5035.0835, 28.6520386, 4325.29443, 0.0243340395, -7.08064647e-08, 0.999703884,
                                      -6.36926814e-08, 1, 7.23777944e-08, -0.999703884, -6.54350671e-08, 0.0243340395)
@@ -117,6 +137,7 @@ function Data.CheckQuest()
             Ms = "Sky Bandit [Lv. 150]"
             NameQuest = "SkyQuest"
             LevelQuest = 1
+            LevelRequire = 150
             NameMon = "Sky Bandit"
             CFrameQuest = CFrame.new(-4841.83447, 717.669617, -2623.96436, -0.875942111, 5.59710216e-08, -0.482416272,
                                      3.04023082e-08, 1, 6.08195947e-08, 0.482416272, 3.86078725e-08, -0.875942111)
@@ -127,6 +148,7 @@ function Data.CheckQuest()
             Ms = "Dark Master [Lv. 175]"
             NameQuest = "SkyQuest"
             LevelQuest = 2
+            LevelRequire = 175
             NameMon = "Dark Master"
             CFrameQuest = CFrame.new(-4841.83447, 717.669617, -2623.96436, -0.875942111, 5.59710216e-08, -0.482416272,
                                      3.04023082e-08, 1, 6.08195947e-08, 0.482416272, 3.86078725e-08, -0.875942111)
@@ -137,6 +159,7 @@ function Data.CheckQuest()
             Ms = "Prisoner [Lv. 190]"
             NameQuest = "PrisonerQuest"
             LevelQuest = 1
+            LevelRequire = 190
             NameMon = "Prisoner"
             CFrameQuest = CFrame.new(5308.93115, 1.65517521, 475.120514, -0.0894274712, -5.00292918e-09, -0.995993316,
                                      1.60817859e-09, 1, -5.16744869e-09, 0.995993316, -2.06384709e-09, -0.0894274712)
@@ -147,6 +170,7 @@ function Data.CheckQuest()
             Ms = "Dangerous Prisoner [Lv. 210]"
             NameQuest = "PrisonerQuest"
             LevelQuest = 2
+            LevelRequire = 210
             NameMon = "Dangerous Prisoner"
             CFrameQuest = CFrame.new(5308.93115, 1.65517521, 475.120514, -0.0894274712, -5.00292918e-09, -0.995993316,
                                      1.60817859e-09, 1, -5.16744869e-09, 0.995993316, -2.06384709e-09, -0.0894274712)
@@ -157,6 +181,7 @@ function Data.CheckQuest()
             Ms = "Toga Warrior [Lv. 250]"
             NameQuest = "ColosseumQuest"
             LevelQuest = 1
+            LevelRequire = 250
             NameMon = "Toga Warrior"
             CFrameQuest = CFrame.new(-1576.11743, 7.38933945, -2983.30762, 0.576966345, 1.22114863e-09, 0.816767931,
                                      -3.58496594e-10, 1, -1.24185606e-09, -0.816767931, 4.2370063e-10, 0.576966345)
@@ -167,6 +192,7 @@ function Data.CheckQuest()
             Ms = "Gladiator [Lv. 275]"
             NameQuest = "ColosseumQuest"
             LevelQuest = 2
+            LevelRequire = 275
             NameMon = "Gladiato"
             CFrameQuest = CFrame.new(-1576.11743, 7.38933945, -2983.30762, 0.576966345, 1.22114863e-09, 0.816767931,
                                      -3.58496594e-10, 1, -1.24185606e-09, -0.816767931, 4.2370063e-10, 0.576966345)
@@ -177,6 +203,7 @@ function Data.CheckQuest()
             Ms = "Military Soldier [Lv. 300]"
             NameQuest = "MagmaQuest"
             LevelQuest = 1
+            LevelRequire = 300
             NameMon = "Military Soldier"
             CFrameQuest = CFrame.new(-5316.55859, 12.2370615, 8517.2998, 0.588437557, -1.37880001e-08, -0.808542669,
                                      -2.10116209e-08, 1, -3.23446478e-08, 0.808542669, 3.60215964e-08, 0.588437557)
@@ -187,6 +214,7 @@ function Data.CheckQuest()
             Ms = "Military Spy [Lv. 325]"
             NameQuest = "MagmaQuest"
             LevelQuest = 2
+            LevelRequire = 325
             NameMon = "Military Spy"
             CFrameQuest = CFrame.new(-5316.55859, 12.2370615, 8517.2998, 0.588437557, -1.37880001e-08, -0.808542669,
                                      -2.10116209e-08, 1, -3.23446478e-08, 0.808542669, 3.60215964e-08, 0.588437557)
@@ -197,6 +225,7 @@ function Data.CheckQuest()
             Ms = "Fishman Warrior [Lv. 375]"
             NameQuest = "FishmanQuest"
             LevelQuest = 1
+            LevelRequire = 375
             NameMon = "Fishman Warrior"
             CFrameQuest = CFrame.new(61122.5625, 18.4716396, 1568.16504, 0.893533468, 3.95251609e-09, 0.448996574,
                                      -2.34327455e-08, 1, 3.78297464e-08, -0.448996574, -4.43233645e-08, 0.893533468)
@@ -207,6 +236,7 @@ function Data.CheckQuest()
             Ms = "Fishman Commando [Lv. 400]"
             NameQuest = "FishmanQuest"
             LevelQuest = 2
+            LevelRequire = 400
             NameMon = "Fishman Commando"
             CFrameQuest = CFrame.new(61122.5625, 18.4716396, 1568.16504, 0.893533468, 3.95251609e-09, 0.448996574,
                                      -2.34327455e-08, 1, 3.78297464e-08, -0.448996574, -4.43233645e-08, 0.893533468)
@@ -217,6 +247,7 @@ function Data.CheckQuest()
             Ms = "God's Guard [Lv. 450]"
             NameQuest = "SkyExp1Quest"
             LevelQuest = 1
+            LevelRequire = 450
             NameMon = "God's Guards"
             CFrameQuest = CFrame.new(-4721.71436, 845.277161, -1954.20105, -0.999277651, -5.56969759e-09, 0.0380011722,
                                      -4.14751478e-09, 1, 3.75035256e-08, -0.0380011722, 3.73188307e-08, -0.999277651)
@@ -228,6 +259,7 @@ function Data.CheckQuest()
             Ms = "Shanda [Lv. 475]"
             NameQuest = "SkyExp1Quest"
             LevelQuest = 2
+            LevelRequire = 475
             NameMon = "Shandas"
             CFrameQuest = CFrame.new(-7863.63672, 5545.49316, -379.826324, 0.362120807, -1.98046344e-08, -0.93213129,
                                      4.05822291e-08, 1, -5.48095125e-09, 0.93213129, -3.58431969e-08, 0.362120807)
@@ -239,6 +271,7 @@ function Data.CheckQuest()
             Ms = "Royal Squad [Lv. 525]"
             NameQuest = "SkyExp2Quest"
             LevelQuest = 1
+            LevelRequire = 525
             NameMon = "Royal Squad"
             CFrameQuest = CFrame.new(-7902.66895, 5635.96387, -1411.71802, 0.0504222959, 2.5710392e-08, 0.998727977,
                                      1.12541557e-07, 1, -3.14249675e-08, -0.998727977, 1.13982921e-07, 0.0504222959)
@@ -251,6 +284,7 @@ function Data.CheckQuest()
             Ms = "Royal Soldier [Lv. 550]"
             NameQuest = "SkyExp2Quest"
             LevelQuest = 2
+            LevelRequire = 550
             NameMon = "Royal Soldier"
             CFrameQuest = CFrame.new(-7902.66895, 5635.96387, -1411.71802, 0.0504222959, 2.5710392e-08, 0.998727977,
                                      1.12541557e-07, 1, -3.14249675e-08, -0.998727977, 1.13982921e-07, 0.0504222959)
@@ -263,6 +297,7 @@ function Data.CheckQuest()
             Ms = "Galley Pirate [Lv. 625]"
             NameQuest = "FountainQuest"
             LevelQuest = 1
+            LevelRequire = 625
             NameMon = "Galley Pirate"
             CFrameQuest = CFrame.new(5254.60156, 38.5011406, 4049.69678, -0.0504891425, -3.62066501e-08, -0.998724639,
                                      -9.87921389e-09, 1, -3.57534553e-08, 0.998724639, 8.06145284e-09, -0.0504891425)
@@ -274,6 +309,7 @@ function Data.CheckQuest()
             Ms = "Galley Captain [Lv. 650]"
             NameQuest = "FountainQuest"
             LevelQuest = 2
+            LevelRequire = 650
             NameMon = "Galley Captain"
             CFrameQuest = CFrame.new(5254.60156, 38.5011406, 4049.69678, -0.0504891425, -3.62066501e-08, -0.998724639,
                                      -9.87921389e-09, 1, -3.57534553e-08, 0.998724639, 8.06145284e-09, -0.0504891425)
@@ -286,6 +322,7 @@ function Data.CheckQuest()
             Ms = "Raider [Lv. 700]"
             NameQuest = "Area1Quest"
             LevelQuest = 1
+            LevelRequire = 700
             NameMon = "Raider"
             CFrameQuest = CFrame.new(-424.080078, 73.0055847, 1836.91589, 0.253544956, -1.42165932e-08, 0.967323601,
                                      -6.00147771e-08, 1, 3.04272909e-08, -0.967323601, -6.5768397e-08, 0.253544956)
@@ -296,6 +333,7 @@ function Data.CheckQuest()
             Ms = "Mercenary [Lv. 725]"
             NameQuest = "Area1Quest"
             LevelQuest = 2
+            LevelRequire = 725
             NameMon = "Mercenary"
             CFrameQuest = CFrame.new(-424.080078, 73.0055847, 1836.91589, 0.253544956, -1.42165932e-08, 0.967323601,
                                      -6.00147771e-08, 1, 3.04272909e-08, -0.967323601, -6.5768397e-08, 0.253544956)
@@ -306,6 +344,7 @@ function Data.CheckQuest()
             Ms = "Swan Pirate [Lv. 775]"
             NameQuest = "Area2Quest"
             LevelQuest = 1
+            LevelRequire = 775
             NameMon = "Swan Pirate"
             CFrameQuest = CFrame.new(632.698608, 73.1055908, 918.666321, -0.0319722369, 8.96074881e-10, -0.999488771,
                                      1.36326533e-10, 1, 8.92172336e-10, 0.999488771, -1.07732087e-10, -0.0319722369)
@@ -316,6 +355,7 @@ function Data.CheckQuest()
             Ms = "Factory Staff [Lv. 800]"
             NameQuest = "Area2Quest"
             LevelQuest = 2
+            LevelRequire = 800
             NameMon = "Factory Staff"
             CFrameQuest = CFrame.new(632.698608, 73.1055908, 918.666321, -0.0319722369, 8.96074881e-10, -0.999488771,
                                      1.36326533e-10, 1, 8.92172336e-10, 0.999488771, -1.07732087e-10, -0.0319722369)
@@ -326,6 +366,7 @@ function Data.CheckQuest()
             Ms = "Marine Lieutenant [Lv. 875]"
             NameQuest = "MarineQuest3"
             LevelQuest = 1
+            LevelRequire = 875
             NameMon = "Marine Lieutenant"
             CFrameQuest = CFrame.new(-2442.65015, 73.0511475, -3219.11523, -0.873540044, 4.2329841e-08, -0.486752301,
                                      5.64383384e-08, 1, -1.43220786e-08, 0.486752301, -3.99823996e-08, -0.873540044)
@@ -336,6 +377,7 @@ function Data.CheckQuest()
             Ms = "Marine Captain [Lv. 900]"
             NameQuest = "MarineQuest3"
             LevelQuest = 2
+            LevelRequire = 900
             NameMon = "Marine Captain"
             CFrameQuest = CFrame.new(-2442.65015, 73.0511475, -3219.11523, -0.873540044, 4.2329841e-08, -0.486752301,
                                      5.64383384e-08, 1, -1.43220786e-08, 0.486752301, -3.99823996e-08, -0.873540044)
@@ -346,6 +388,7 @@ function Data.CheckQuest()
             Ms = "Zombie [Lv. 950]"
             NameQuest = "ZombieQuest"
             LevelQuest = 1
+            LevelRequire = 950
             NameMon = "Zombie"
             CFrameQuest = CFrame.new(-5492.79395, 48.5151672, -793.710571, 0.321800292, -6.24695815e-08, 0.946807742,
                                      4.05616092e-08, 1, 5.21931227e-08, -0.946807742, 2.16082796e-08, 0.321800292)
@@ -356,6 +399,7 @@ function Data.CheckQuest()
             Ms = "Vampire [Lv. 975]"
             NameQuest = "ZombieQuest"
             LevelQuest = 2
+            LevelRequire = 975
             NameMon = "Vampire"
             CFrameQuest = CFrame.new(-5492.79395, 48.5151672, -793.710571, 0.321800292, -6.24695815e-08, 0.946807742,
                                      4.05616092e-08, 1, 5.21931227e-08, -0.946807742, 2.16082796e-08, 0.321800292)
@@ -366,6 +410,7 @@ function Data.CheckQuest()
             Ms = "Snow Trooper [Lv. 1000]"
             NameQuest = "SnowMountainQuest"
             LevelQuest = 1
+            LevelRequire = 1000
             NameMon = "Snow Trooper"
             CFrameQuest = CFrame.new(604.964966, 401.457062, -5371.69287, 0.353063971, 1.89520435e-08, -0.935599446,
                                      -5.81846002e-08, 1, -1.70033754e-09, 0.935599446, 5.50377841e-08, 0.353063971)
@@ -376,6 +421,7 @@ function Data.CheckQuest()
             Ms = "Winter Warrior [Lv. 1050]"
             NameQuest = "SnowMountainQuest"
             LevelQuest = 2
+            LevelRequire = 1050
             NameMon = "Winter Warrior"
             CFrameQuest = CFrame.new(604.964966, 401.457062, -5371.69287, 0.353063971, 1.89520435e-08, -0.935599446,
                                      -5.81846002e-08, 1, -1.70033754e-09, 0.935599446, 5.50377841e-08, 0.353063971)
@@ -386,6 +432,7 @@ function Data.CheckQuest()
             Ms = "Lab Subordinate [Lv. 1100]"
             NameQuest = "IceSideQuest"
             LevelQuest = 1
+            LevelRequire = 1100
             NameMon = "Lab Subordinate"
             CFrameQuest = CFrame.new(-6060.10693, 15.9868021, -4904.7876, -0.411000341, -5.06538868e-07, 0.91163528,
                                      1.26306062e-07, 1, 6.12581289e-07, -0.91163528, 3.66916197e-07, -0.411000341)
@@ -396,6 +443,7 @@ function Data.CheckQuest()
             Ms = "Horned Warrior [Lv. 1125]"
             NameQuest = "IceSideQuest"
             LevelQuest = 2
+            LevelRequire = 1125
             NameMon = "Horned Warrior"
             CFrameQuest = CFrame.new(-6060.10693, 15.9868021, -4904.7876, -0.411000341, -5.06538868e-07, 0.91163528,
                                      1.26306062e-07, 1, 6.12581289e-07, -0.91163528, 3.66916197e-07, -0.411000341)
@@ -406,6 +454,7 @@ function Data.CheckQuest()
             Ms = "Magma Ninja [Lv. 1175]"
             NameQuest = "FireSideQuest"
             LevelQuest = 1
+            LevelRequire = 1175
             NameMon = "Magma Ninja"
             CFrameQuest = CFrame.new(-5431.09473, 15.9868021, -5296.53223, 0.831796765, 1.15322464e-07, -0.555080295,
                                      -1.10814341e-07, 1, 4.17010995e-08, 0.555080295, 2.68240168e-08, 0.831796765)
@@ -416,6 +465,7 @@ function Data.CheckQuest()
             Ms = "Lava Pirate [Lv. 1200]"
             NameQuest = "FireSideQuest"
             LevelQuest = 2
+            LevelRequire = 1200
             NameMon = "Lava Pirate"
             CFrameQuest = CFrame.new(-5431.09473, 15.9868021, -5296.53223, 0.831796765, 1.15322464e-07, -0.555080295,
                                      -1.10814341e-07, 1, 4.17010995e-08, 0.555080295, 2.68240168e-08, 0.831796765)
@@ -426,6 +476,7 @@ function Data.CheckQuest()
             Ms = "Ship Deckhand [Lv. 1250]"
             NameQuest = "ShipQuest1"
             LevelQuest = 1
+            LevelRequire = 1250
             NameMon = "Ship Deckhand"
             CFrameQuest = CFrame.new(1037.80127, 125.092171, 32911.6016, -0.244533166, -0, -0.969640911, -0, 1.00000012,
                                      -0, 0.96964103, 0, -0.244533136)
@@ -436,6 +487,7 @@ function Data.CheckQuest()
             Ms = "Ship Engineer [Lv. 1275]"
             NameQuest = "ShipQuest1"
             LevelQuest = 2
+            LevelRequire = 1275
             NameMon = "Ship Engineer"
             CFrameQuest = CFrame.new(1037.80127, 125.092171, 32911.6016, -0.244533166, -0, -0.969640911, -0, 1.00000012,
                                      -0, 0.96964103, 0, -0.244533136)
@@ -446,6 +498,7 @@ function Data.CheckQuest()
             Ms = "Ship Steward [Lv. 1300]"
             NameQuest = "ShipQuest2"
             LevelQuest = 1
+            LevelRequire = 1300
             NameMon = "Ship Steward"
             CFrameQuest = CFrame.new(968.80957, 125.092171, 33244.125, -0.869560242, 1.51905191e-08, -0.493826836,
                                      1.44108379e-08, 1, 5.38534195e-09, 0.493826836, -2.43357912e-09, -0.869560242)
@@ -456,6 +509,7 @@ function Data.CheckQuest()
             Ms = "Ship Officer [Lv. 1325]"
             NameQuest = "ShipQuest2"
             LevelQuest = 2
+            LevelRequire = 1325
             NameMon = "Ship Officer"
             CFrameQuest = CFrame.new(968.80957, 125.092171, 33244.125, -0.869560242, 1.51905191e-08, -0.493826836,
                                      1.44108379e-08, 1, 5.38534195e-09, 0.493826836, -2.43357912e-09, -0.869560242)
@@ -466,6 +520,7 @@ function Data.CheckQuest()
             Ms = "Arctic Warrior [Lv. 1350]"
             NameQuest = "FrostQuest"
             LevelQuest = 1
+            LevelRequire = 1350
             NameMon = "Arctic Warrior"
             CFrameQuest = CFrame.new(5669.43506, 28.2117786, -6482.60107, 0.888092756, 1.02705066e-07, 0.459664226,
                                      -6.20391774e-08, 1, -1.03572376e-07, -0.459664226, 6.34646895e-08, 0.888092756)
@@ -476,6 +531,7 @@ function Data.CheckQuest()
             Ms = "Snow Lurker [Lv. 1375]"
             NameQuest = "FrostQuest"
             LevelQuest = 2
+            LevelRequire = 1375
             NameMon = "Snow Lurker"
             CFrameQuest = CFrame.new(5669.43506, 28.2117786, -6482.60107, 0.888092756, 1.02705066e-07, 0.459664226,
                                      -6.20391774e-08, 1, -1.03572376e-07, -0.459664226, 6.34646895e-08, 0.888092756)
@@ -486,6 +542,7 @@ function Data.CheckQuest()
             Ms = "Sea Soldier [Lv. 1425]"
             NameQuest = "ForgottenQuest"
             LevelQuest = 1
+            LevelRequire = 1425
             NameMon = "Sea Soldier"
             CFrameQuest = CFrame.new(-3052.99097, 236.881363, -10148.1943, -0.997911751, 4.42321983e-08, 0.064591676,
                                      4.90968759e-08, 1, 7.37270085e-08, -0.064591676, 7.67442998e-08, -0.997911751)
@@ -496,6 +553,7 @@ function Data.CheckQuest()
             Ms = "Water Fighter [Lv. 1450]"
             NameQuest = "ForgottenQuest"
             LevelQuest = 2
+            LevelRequire = 1450
             NameMon = "Water Fighter"
             CFrameQuest = CFrame.new(-3052.99097, 236.881363, -10148.1943, -0.997911751, 4.42321983e-08, 0.064591676,
                                      4.90968759e-08, 1, 7.37270085e-08, -0.064591676, 7.67442998e-08, -0.997911751)
@@ -508,6 +566,7 @@ function Data.CheckQuest()
             Ms = "Pirate Millionaire [Lv. 1500]"
             NameQuest = "PiratePortQuest"
             LevelQuest = 1
+            LevelRequire = 1500
             NameMon = "Pirate Millionaire"
             CFrameQuest = CFrame.new(-290.074677, 42.9034653, 5581.58984, 0.965929627, -0, -0.258804798, 0, 1, -0,
                                      0.258804798, 0, 0.965929627)
@@ -517,6 +576,7 @@ function Data.CheckQuest()
             Ms = "Pistol Billionaire [Lv. 1525]"
             NameQuest = "PiratePortQuest"
             LevelQuest = 2
+            LevelRequire = 1525
             NameMon = "Pistol Billionaire"
             CFrameQuest = CFrame.new(-290.074677, 42.9034653, 5581.58984, 0.965929627, -0, -0.258804798, 0, 1, -0,
                                      0.258804798, 0, 0.965929627)
@@ -526,6 +586,7 @@ function Data.CheckQuest()
             Ms = "Dragon Crew Warrior [Lv. 1575]"
             NameQuest = "AmazonQuest"
             LevelQuest = 1
+            LevelRequire = 1575
             NameMon = "Dragon Crew Warrior"
             CFrameQuest = CFrame.new(5832.83594, 51.6806107, -1101.51563, 0.898790359, -0, -0.438378751, 0, 1, -0,
                                      0.438378751, 0, 0.898790359)
@@ -535,6 +596,7 @@ function Data.CheckQuest()
             Ms = "Dragon Crew Archer [Lv. 1600]"
             NameQuest = "AmazonQuest"
             LevelQuest = 2
+            LevelRequire = 1600
             NameMon = "Dragon Crew Archer"
             CFrameQuest = CFrame.new(5832.83594, 51.6806107, -1101.51563, 0.898790359, -0, -0.438378751, 0, 1, -0,
                                      0.438378751, 0, 0.898790359)
@@ -544,6 +606,7 @@ function Data.CheckQuest()
             Ms = "Female Islander [Lv. 1625]"
             NameQuest = "AmazonQuest2"
             LevelQuest = 1
+            LevelRequire = 1625
             NameMon = "Female Islander"
             CFrameQuest = CFrame.new(5448.86133, 601.516174, 751.130676, 0, 0, 1, 0, 1, -0, -1, 0, 0)
             CFrameMon = CFrame.new(4770.4990234375, 758.95520019531, 1069.8680419922)
@@ -552,6 +615,7 @@ function Data.CheckQuest()
             Ms = "Giant Islander [Lv. 1650]"
             NameQuest = "AmazonQuest2"
             LevelQuest = 2
+            LevelRequire = 1650
             NameMon = "Giant Islander"
             CFrameQuest = CFrame.new(5448.86133, 601.516174, 751.130676, 0, 0, 1, 0, 1, -0, -1, 0, 0)
             CFrameMon = CFrame.new(4530.3540039063, 656.75695800781, -131.60952758789)
@@ -560,6 +624,7 @@ function Data.CheckQuest()
             Ms = "Marine Commodore [Lv. 1700]"
             NameQuest = "MarineTreeIsland"
             LevelQuest = 1
+            LevelRequire = 1700
             NameMon = "Marine Commodore"
             CFrameQuest = CFrame.new(2180.54126, 27.8156815, -6741.5498, -0.965929747, 0, 0.258804798, 0, 1, 0,
                                      -0.258804798, 0, -0.965929747)
@@ -569,6 +634,7 @@ function Data.CheckQuest()
             Ms = "Marine Rear Admiral [Lv. 1725]"
             NameQuest = "MarineTreeIsland"
             LevelQuest = 2
+            LevelRequire = 1725
             NameMon = "Marine Rear Admiral"
             CFrameQuest = CFrame.new(2180.54126, 27.8156815, -6741.5498, -0.965929747, 0, 0.258804798, 0, 1, 0,
                                      -0.258804798, 0, -0.965929747)
@@ -578,6 +644,7 @@ function Data.CheckQuest()
             Ms = "Fishman Raider [Lv. 1775]"
             NameQuest = "DeepForestIsland3"
             LevelQuest = 1
+            LevelRequire = 1775
             NameMon = "Fishman Raider"
             CFrameQuest = CFrame.new(-10581.6563, 330.872955, -8761.18652, -0.882952213, 0, 0.469463557, 0, 1, 0,
                                      -0.469463557, 0, -0.882952213)
@@ -587,6 +654,7 @@ function Data.CheckQuest()
             Ms = "Fishman Captain [Lv. 1800]"
             NameQuest = "DeepForestIsland3"
             LevelQuest = 2
+            LevelRequire = 1800
             NameMon = "Fishman Captain"
             CFrameQuest = CFrame.new(-10581.6563, 330.872955, -8761.18652, -0.882952213, 0, 0.469463557, 0, 1, 0,
                                      -0.469463557, 0, -0.882952213)
@@ -596,6 +664,7 @@ function Data.CheckQuest()
             Ms = "Forest Pirate [Lv. 1825]"
             NameQuest = "DeepForestIsland"
             LevelQuest = 1
+            LevelRequire = 1825
             NameMon = "Forest Pirate"
             CFrameQuest = CFrame.new(-13234.04, 331.488495, -7625.40137, 0.707134247, -0, -0.707079291, 0, 1, -0,
                                      0.707079291, 0, 0.707134247)
@@ -605,6 +674,7 @@ function Data.CheckQuest()
             Ms = "Mythological Pirate [Lv. 1850]"
             NameQuest = "DeepForestIsland"
             LevelQuest = 2
+            LevelRequire = 1850
             NameMon = "Mythological Pirate"
             CFrameQuest = CFrame.new(-13234.04, 331.488495, -7625.40137, 0.707134247, -0, -0.707079291, 0, 1, -0,
                                      0.707079291, 0, 0.707134247)
@@ -614,6 +684,7 @@ function Data.CheckQuest()
             Ms = "Jungle Pirate [Lv. 1900]"
             NameQuest = "DeepForestIsland2"
             LevelQuest = 1
+            LevelRequire = 1900
             NameMon = "Jungle Pirate"
             CFrameQuest = CFrame.new(-12680.3818, 389.971039, -9902.01953, -0.0871315002, 0, 0.996196866, 0, 1, 0,
                                      -0.996196866, 0, -0.0871315002)
@@ -623,6 +694,7 @@ function Data.CheckQuest()
             Ms = "Musketeer Pirate [Lv. 1925]"
             NameQuest = "DeepForestIsland2"
             LevelQuest = 2
+            LevelRequire = 1925
             NameMon = "Musketeer Pirate"
             CFrameQuest = CFrame.new(-12680.3818, 389.971039, -9902.01953, -0.0871315002, 0, 0.996196866, 0, 1, 0,
                                      -0.996196866, 0, -0.0871315002)
@@ -632,6 +704,7 @@ function Data.CheckQuest()
             Ms = "Reborn Skeleton [Lv. 1975]"
             NameQuest = "HauntedQuest1"
             LevelQuest = 1
+            LevelRequire = 1975
             NameMon = "Reborn Skeleton"
             CFrameQuest = CFrame.new(-9479.2168, 141.215088, 5566.09277, 0, 0, 1, 0, 1, -0, -1, 0, 0)
             CFrameMon = CFrame.new(-8761.3154296875, 164.85829162598, 6161.1567382813)
@@ -640,6 +713,7 @@ function Data.CheckQuest()
             Ms = "Living Zombie [Lv. 2000]"
             NameQuest = "HauntedQuest1"
             LevelQuest = 2
+            LevelRequire = 2000
             NameMon = "Living Zombie"
             CFrameQuest = CFrame.new(-9479.2168, 141.215088, 5566.09277, 0, 0, 1, 0, 1, -0, -1, 0, 0)
             CFrameMon = CFrame.new(-10093.930664063, 237.38233947754, 6180.5654296875)
@@ -648,6 +722,7 @@ function Data.CheckQuest()
             Ms = "Demonic Soul [Lv. 2025]"
             NameQuest = "HauntedQuest2"
             LevelQuest = 1
+            LevelRequire = 2025
             NameMon = "Demonic Soul"
             CFrameQuest = CFrame.new(-9514.78027, 171.162918, 6078.82373, 0.301918149, 7.4535027e-09, 0.953333855,
                                      -3.22802141e-09, 1, -6.79604995e-09, -0.953333855, -1.02553133e-09, 0.301918149)
@@ -657,6 +732,7 @@ function Data.CheckQuest()
             Ms = "Posessed Mummy [Lv. 2050]"
             NameQuest = "HauntedQuest2"
             LevelQuest = 2
+            LevelRequire = 2050
             NameMon = "Posessed Mummy"
             CFrameQuest = CFrame.new(-9514.78027, 171.162918, 6078.82373, 0.301918149, 7.4535027e-09, 0.953333855,
                                      -3.22802141e-09, 1, -6.79604995e-09, -0.953333855, -1.02553133e-09, 0.301918149)
@@ -666,6 +742,7 @@ function Data.CheckQuest()
             Ms = "Peanut Scout [Lv. 2075]"
             NameQuest = "NutsIslandQuest"
             LevelQuest = 1
+            LevelRequire = 2075
             NameMon = "Peanut Scout"
             CFrameQuest = CFrame.new(-2103.9375, 38.139019012451, -10192.702148438)
             CFrameMon = CFrame.new(-2150.587890625, 122.49767303467, -10358.994140625)
@@ -674,6 +751,7 @@ function Data.CheckQuest()
             Ms = "Peanut President [Lv. 2100]"
             NameQuest = "NutsIslandQuest"
             LevelQuest = 2
+            LevelRequire = 2100
             NameMon = "Peanut President"
             CFrameQuest = CFrame.new(-2103.9375, 38.139019012451, -10192.702148438)
             CFrameMon = CFrame.new(-2150.587890625, 122.49767303467, -10358.994140625)
@@ -682,6 +760,7 @@ function Data.CheckQuest()
             Ms = "Ice Cream Chef [Lv. 2125]"
             NameQuest = "IceCreamIslandQuest"
             LevelQuest = 1
+            LevelRequire = 2125
             NameMon = "Ice Cream Chef"
             CFrameQuest = CFrame.new(-819.84533691406, 65.845329284668, -10965.487304688)
             CFrameMon = CFrame.new(-890.55895996094, 186.34135437012, -11127.306640625)
@@ -690,6 +769,7 @@ function Data.CheckQuest()
             Ms = "Ice Cream Commander [Lv. 2150]"
             NameQuest = "IceCreamIslandQuest"
             LevelQuest = 2
+            LevelRequire = 2150
             NameMon = "Ice Cream Commander"
             CFrameQuest = CFrame.new(-819.84533691406, 65.845329284668, -10965.487304688)
             CFrameMon = CFrame.new(-890.55895996094, 186.34135437012, -11127.306640625)
@@ -698,6 +778,7 @@ function Data.CheckQuest()
             Ms = "Cookie Crafter [Lv. 2200]"
             NameQuest = "CakeQuest1"
             LevelQuest = 1
+            LevelRequire = 2200
             NameMon = "Cookie Crafter"
             CFrameQuest = CFrame.new(-2021.5509033203125, 37.798221588134766, -12028.103515625)
             CFrameMon = CFrame.new(-2273.00244140625, 90.22590637207031, -12151.62109375)
@@ -706,6 +787,7 @@ function Data.CheckQuest()
             Ms = "Cake Guard [Lv. 2225]"
             NameQuest = "CakeQuest1"
             LevelQuest = 2
+            LevelRequire = 2225
             NameMon = "Cake Guard"
             CFrameQuest = CFrame.new(-2021.5509033203125, 37.798221588134766, -12028.103515625)
             CFrameMon = CFrame.new(-1442.373046875, 158.14111328125, -12277.37109375)
@@ -714,6 +796,7 @@ function Data.CheckQuest()
             Ms = "Baking Staff [Lv. 2250]"
             NameQuest = "CakeQuest2"
             LevelQuest = 1
+            LevelRequire = 2250
             NameMon = "Baking Staff"
             CFrameQuest = CFrame.new(-1927.9107666015625, 37.79813003540039, -12843.78515625)
             CFrameMon = CFrame.new(-1837.2803955078125, 129.0594482421875, -12934.5498046875)
@@ -722,6 +805,7 @@ function Data.CheckQuest()
             Ms = "Head Baker [Lv. 2275]"
             NameQuest = "CakeQuest2"
             LevelQuest = 2
+            LevelRequire = 2275
             NameMon = "Head Baker"
             CFrameQuest = CFrame.new(-1927.9107666015625, 37.79813003540039, -12843.78515625)
             CFrameMon = CFrame.new(-2203.302490234375, 109.90937042236328, -12788.7333984375)
@@ -730,6 +814,7 @@ function Data.CheckQuest()
             Ms = "Cocoa Warrior [Lv. 2300]"
             NameQuest = "ChocQuest1"
             LevelQuest = 1
+            LevelRequire = 2300
             NameMon = "Cocoa Warrior"
             CFrameQuest = CFrame.new(231.13571166992188, 24.734268188476562, -12195.1162109375)
             CFrameMon = CFrame.new(231.13571166992188, 24.734268188476562, -12195.1162109375)
@@ -738,6 +823,7 @@ function Data.CheckQuest()
             Ms = "Chocolate Bar Battler [Lv. 2325]"
             NameQuest = "ChocQuest1"
             LevelQuest = 2
+            LevelRequire = 2325
             NameMon = "Chocolate Bar Battler"
             CFrameQuest = CFrame.new(231.13571166992188, 24.734268188476562, -12195.1162109375)
             CFrameMon = CFrame.new(231.13571166992188, 24.734268188476562, -12195.1162109375)
@@ -746,6 +832,7 @@ function Data.CheckQuest()
             Ms = "Sweet Thief [Lv. 2350]"
             NameQuest = "ChocQuest2"
             LevelQuest = 1
+            LevelRequire = 2350
             NameMon = "Sweet Thief"
             CFrameQuest = CFrame.new(147.52256774902344, 24.793832778930664, -12775.3583984375)
             CFrameMon = CFrame.new(147.52256774902344, 24.793832778930664, -12775.3583984375)
@@ -754,6 +841,7 @@ function Data.CheckQuest()
             Ms = "Candy Rebel [Lv. 2375]"
             NameQuest = "ChocQuest2"
             LevelQuest = 2
+            LevelRequire = 2375
             NameMon = "Candy Rebel"
             CFrameQuest = CFrame.new(147.52256774902344, 24.793832778930664, -12775.3583984375)
             CFrameMon = CFrame.new(147.52256774902344, 24.793832778930664, -12775.3583984375)
@@ -762,6 +850,7 @@ function Data.CheckQuest()
             Ms = "Candy Pirate [Lv. 2400]"
             NameQuest = "CandyQuest1"
             LevelQuest = 1
+            LevelRequire = 2400
             NameMon = "Candy Pirate"
             CFrameQuest = CFrame.new(-1151.48987, 16.1422901, -14445.6904, -0.316594511, -6.85698254e-08, -0.948560953,
                                      -2.05343067e-08, 1, -6.54346692e-08, 0.948560953, -1.23821675e-09, -0.316594511)
@@ -772,6 +861,7 @@ function Data.CheckQuest()
             Ms = "Snow Demon [Lv. 2425]"
             NameQuest = "CandyQuest1"
             LevelQuest = 2
+            LevelRequire = 2425
             NameMon = "Snow Demon"
             CFrameQuest = CFrame.new(-1151.48987, 16.1422901, -14445.6904, -0.316594511, -6.85698254e-08, -0.948560953,
                                      -2.05343067e-08, 1, -6.54346692e-08, 0.948560953, -1.23821675e-09, -0.316594511)
