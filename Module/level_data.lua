@@ -1,6 +1,4 @@
 local PlaceId = game.PlaceId
-local SelectMobFarm
-local SelectMonster
 if PlaceId == 2753915549 then
     Sea1 = true
 elseif PlaceId == 4442272183 then
@@ -11,7 +9,7 @@ end
 
 local Data = {}
 
-function Data.CheckQuest()
+function Data.CheckQuest(SelectMobFarm)
     local Client = game.Players.LocalPlayer
     local MyLevel = Client.Data.Level.Value
     if Sea1 then
@@ -873,7 +871,7 @@ function Data.CheckQuest()
     end
 end
 
-function Data.CheckSelect()
+function Data.CheckSelect(SelectMonster)
     local MyLevel = game.Players.LocalPlayer.Data.Level.Value
     if Sea1 then
         if MyLevel == 1 or MyLevel <= 9 or SelectMonster == "Bandit [Lv. 5]" then -- Bandit
