@@ -1,5 +1,6 @@
 local PlaceId = game.PlaceId
 local SelectMobFarm
+local SelectMonster
 if PlaceId == 2753915549 then
     Sea1 = true
 elseif PlaceId == 4442272183 then
