@@ -875,7 +875,7 @@ end
 
 function Data.CheckSelect()
     local MyLevel = game.Players.LocalPlayer.Data.Level.Value
-    if World1 then
+    if Sea1 then
         if MyLevel == 1 or MyLevel <= 9 or SelectMonster == "Bandit [Lv. 5]" then -- Bandit
             Mon = "Bandit [Lv. 5]"
             -- NameQuest = "BanditQuest1"
@@ -1118,7 +1118,7 @@ function Data.CheckSelect()
                                    2.16989656e-06, 1, -4.96097414e-07, 0.0790185928, -6.66008248e-07, -0.996873081)
             -- Spawn = "Fountain"
         end
-    elseif World2 then
+    elseif Sea2 then
         if MyLevel == 700 or MyLevel <= 724 or SelectMonster == "Raider [Lv. 700]" then -- Raider [Lv. 700]
             Mon = "Raider [Lv. 700]"
             -- NameQuest = "Area1Quest"
@@ -1318,7 +1318,7 @@ function Data.CheckSelect()
                                    -5.80986068e-08, 1, 3.30992194e-08, -0.972339869, -4.87605725e-08, -0.233570755)
             -- Spawn = "ForgottenIsland"
         end
-    elseif World3 then
+    elseif Sea3 then
         if MyLevel == 1500 or MyLevel <= 1524 or SelectMonster == "Pirate Millionaire [Lv. 1500]" then
             Mon = "Pirate Millionaire [Lv. 1500]"
             -- NameQuest = "PiratePortQuest"
