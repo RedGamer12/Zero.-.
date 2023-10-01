@@ -13,7 +13,7 @@ function Data.CheckQuest(SelectMobFarm)
     local Client = game.Players.LocalPlayer
     local MyLevel = Client.Data.Level.Value
     if Sea1 then
-        if (MyLevel == 1 or MyLevel <= 9 or SelectMobFarm == "Bandit [Lv. 5]") or Client.Team == "Pirates" then -- Bandit
+        if (MyLevel == 1 or MyLevel <= 9 or SelectMobFarm == "Bandit [Lv. 5]") then -- Bandit
             print("Found P")
             Ms = "Bandit [Lv. 5]"
             NameQuest = "BanditQuest1"
@@ -24,16 +24,6 @@ function Data.CheckQuest(SelectMobFarm)
                                      7.04340497e-09, 1, 2.99841325e-08, -0.332852632, 3.06188177e-08, -0.942978859)
             CFrameMon = CFrame.new(1199.31287, 52.2717781, 1536.91516, -0.929782331, 6.60215846e-08, -0.368109822,
                                    3.9077392e-08, 1, 8.06501603e-08, 0.368109822, 6.06023249e-08, -0.929782331)
-            SPAWNPOINT = "Default"
-        elseif (MyLevel == 1 or MyLevel <= 9 or SelectMobFarm == "Trainee [Lv. 5]") or Client.Team == "Marines" then -- Trainee
-            print("Found M")
-            Ms = "Trainee [Lv. 5]"
-            NameQuest = "MarineQuest"
-            LevelQuest = 1
-            LevelRequire = 0
-            NameMon = "Trainee"
-            CFrameQuest = CFrame.new(-2712.64551, 24.6459293, 2101.65259, -0.706964731, -1.0726553e-08, -0.707248807, -3.4630169e-08, 1, 1.94496685e-08, 0.707248807, 3.82423728e-08, -0.706964731)
-            CFrameMon = CFrame.new(-2855.11743, 41.1388931, 2166.48364, -0.19812648, 1.83248616e-08, -0.980176449, -7.75043958e-08, 1, 3.43617046e-08, 0.980176449, 8.27759479e-08, -0.19812648)
             SPAWNPOINT = "Default"
         elseif MyLevel == 10 or MyLevel <= 14 or SelectMobFarm == "Monkey [Lv. 14]" then -- Monkey
             print("Monkey")
