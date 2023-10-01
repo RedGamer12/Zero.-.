@@ -14,7 +14,6 @@ function Data.CheckQuest(SelectMobFarm)
     local MyLevel = Client.Data.Level.Value
     if Sea1 then
         if (MyLevel == 1 or MyLevel <= 9 or SelectMobFarm == "Bandit [Lv. 5]") then -- Bandit
-            print("Found P")
             Ms = "Bandit [Lv. 5]"
             NameQuest = "BanditQuest1"
             LevelQuest = 1
@@ -26,7 +25,6 @@ function Data.CheckQuest(SelectMobFarm)
                                    3.9077392e-08, 1, 8.06501603e-08, 0.368109822, 6.06023249e-08, -0.929782331)
             SPAWNPOINT = "Default"
         elseif MyLevel == 10 or MyLevel <= 14 or SelectMobFarm == "Monkey [Lv. 14]" then -- Monkey
-            print("Monkey")
             Ms = "Monkey [Lv. 14]"
             NameQuest = "JungleQuest"
             LevelQuest = 1
