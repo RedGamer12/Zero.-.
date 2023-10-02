@@ -250,7 +250,7 @@ function Data.CheckQuest(SelectMobFarm)
             NameQuest = "SkyExp1Quest"
             LevelQuest = 2
             LevelRequire = 475
-            NameMon = "Shandas"
+            NameMon = "Shanda"
             CFrameQuest = CFrame.new(-7863.63672, 5545.49316, -379.826324, 0.362120807, -1.98046344e-08, -0.93213129,
                                      4.05822291e-08, 1, -5.48095125e-09, 0.93213129, -3.58431969e-08, 0.362120807)
             CFrameMon = CFrame.new(-7685.12354, 5601.05127, -443.171509, 0.150056243, 1.79768236e-08, -0.988677442,
