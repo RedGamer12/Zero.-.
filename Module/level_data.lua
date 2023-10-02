@@ -244,7 +244,7 @@ function Data.CheckQuest(SelectMobFarm)
             CFrameMon = CFrame.new(-4716.95703, 853.089722, -1933.92542, -0.93441087, -6.77488776e-09, -0.356197298,
                                    1.12145182e-08, 1, -4.84390199e-08, 0.356197298, -4.92565206e-08, -0.93441087)
             SPAWNPOINT = "Sky"
-        elseif MyLevel == 475 or MyLevel <= 524 or SelectMobFarm == "Shanda [Lv. 475]" then -- Shandas
+        elseif MyLevel == 475 or MyLevel <= 524 or SelectMobFarm == "Shanda [Lv. 475]" then -- Shanda
             sky = false
             Ms = "Shanda [Lv. 475]"
             NameQuest = "SkyExp1Quest"
@@ -1054,12 +1054,12 @@ function Data.CheckSelect(SelectMonster)
             CFrameMon = CFrame.new(-4716.95703, 853.089722, -1933.92542, -0.93441087, -6.77488776e-09, -0.356197298,
                                    1.12145182e-08, 1, -4.84390199e-08, 0.356197298, -4.92565206e-08, -0.93441087)
             -- Spawn = "Sky"
-        elseif MyLevel == 475 or MyLevel <= 524 or SelectMonster == "Shanda [Lv. 475]" then -- Shandas
+        elseif MyLevel == 475 or MyLevel <= 524 or SelectMonster == "Shanda [Lv. 475]" then -- Shanda
             sky = false
             Mon = "Shanda [Lv. 475]"
             -- NameQuest = "SkyExp1Quest"
             LevelQuest = 2
-            NameMon = "Shandas"
+            NameMon = "Shanda"
             -- CFrameQuest = CFrame.new(-7863.63672, 5545.49316, -379.826324, 0.362120807, -1.98046344e-08, -0.93213129, 4.05822291e-08, 1, -5.48095125e-09, 0.93213129, -3.58431969e-08, 0.362120807)
             CFrameMon = CFrame.new(-7685.12354, 5601.05127, -443.171509, 0.150056243, 1.79768236e-08, -0.988677442,
                                    6.67798661e-09, 1, 1.91962481e-08, 0.988677442, -9.48289181e-09, 0.150056243)
