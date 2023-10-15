@@ -650,7 +650,7 @@ function Data.CheckLevel()
 	end
 end
 
-function Data.CheckBossQuest()
+function Data.CheckBossQuest(SelectBoss)
 	if Sea1 then
 		if SelectBoss == "The Gorilla King [Lv. 25] [Boss]" then
 			BossMon = "The Gorilla King [Lv. 25] [Boss]"
