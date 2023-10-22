@@ -674,7 +674,6 @@ function Data.CheckLevel()
 			NameMon = "Isle Champion"
 			CFrameQuest = CFrame.new(-16541.50390625, 56.952110290527344, 1054.2220458984375)
 			CFrameMon = CFrame.new(-16775.427734375, 82.45645904541016, 1027.5484619140625)
-			end
 		end
 	end
 end
