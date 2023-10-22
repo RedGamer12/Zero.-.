@@ -638,7 +638,7 @@ function Data.CheckLevel()
 				0, -0.156446099)
 			CFrameMon = CFrame.new(-1437.56348, 17.1481285, -14385.6934, 0.173624337, -0, -0.984811902, 0, 1, -0,
 				0.984811902, 0, 0.173624337)
-		elseif Lv >= 2425 or SelectMonster == "Snow Demon [Lv. 2425]" or SelectArea == 'Candy Island' then
+		elseif Lv == 2425 or Lv <= 2449 or SelectMonster == "Snow Demon [Lv. 2425]" or SelectArea == 'Candy Island' then
 			Ms = "Snow Demon [Lv. 2425]"
 			NameQuest = "CandyQuest1"
 			LevelQuest = 2
@@ -646,6 +646,35 @@ function Data.CheckLevel()
 			CFrameQuest = CFrame.new(-1149.328, 13.5759039, -14445.6143, -0.156446099, 0, -0.987686574, 0, 1, 0, 0.987686574,
 				0, -0.156446099)
 			CFrameMon = CFrame.new(-683.8216552734375, 73.99142456054688, -14395.048828125)
+		elseif Lv == 2450 or Lv <= 2474 then
+			Ms = "Isle Outlaw"
+			NameQuest = "TikiQuest1"
+			LevelQuest = 1
+			NameMon = "Isle Outlaw"
+			CFrameQuest = CFrame.new(-16545.1640625, 56.00381088256836, -176.88841247558594)
+			CFrameMon = CFrame.new(-16269.5517578125, 137.5306854248047, -163.51524353027344)
+		elseif Lv == 2475 or Lv <= 2499 then
+			Ms = "Island Boy"
+			NameQuest = "TikiQuest1"
+			LevelQuest = 2
+			NameMon = "Island Boy"
+			CFrameQuest = CFrame.new(-16545.1640625, 56.00381088256836, -176.88841247558594)
+			CFrameMon = CFrame.new(-16851.650390625, 103.24150085449219, -179.14004516601562)
+		elseif Lv == 2500 or Lv <= 2524 then
+				Ms = "Sun-kissed Warrior"
+				NameQuest = "TikiQuest2"
+				LevelQuest = 1
+				NameMon = "Sun-kissed Warrior"
+				CFrameQuest = CFrame.new(-16541.50390625, 56.952110290527344, 1054.2220458984375)
+				CFrameMon = CFrame.new(-16250.5224609375, 94.38502502441406, 1006.6849975585938)
+		elseif Lv >= 2525 then
+			Ms = "Isle Champion"
+			NameQuest = "TikiQuest2"
+			LevelQuest = 2
+			NameMon = "Isle Champion"
+			CFrameQuest = CFrame.new(-16541.50390625, 56.952110290527344, 1054.2220458984375)
+			CFrameMon = CFrame.new(-16775.427734375, 82.45645904541016, 1027.5484619140625)
+			end
 		end
 	end
 end
